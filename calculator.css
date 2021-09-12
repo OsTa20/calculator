@@ -1,0 +1,107 @@
+#div1 {
+  height: 6%;
+  width: 80%;
+  margin: 5% 5% 0 5%;
+  padding: 1 5% 5% 5%;
+  background-color: #037e9c;
+  border-radius: 20% 20% 0 0;
+}
+#div2 {
+  height: auto;
+  width: 80%;
+  margin: 0 5%;
+  padding: 5%;
+  background-color: #00ccffff;
+  border-radius: 0 0 15px 15px;
+}
+.logo {
+  margin: 1% 3% 5% 28%;
+  width: 47%;
+  height: auto;
+  border-radius: 30%;
+  display: block;  
+}
+#div-in {
+  width: 100%;
+  height: auto;   /* 75px  */
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  background-color: #075a01;
+}
+#screenresult {
+  width: 100%;
+  height: 45px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 0 0 6px 6px;
+  background-color: #075a01;
+  color: red;
+}
+#ac ,#on ,#delet{
+  border-radius: 8px;
+  width: 50px;         /* 50px;     */
+  height: 50px;
+  background-color: #ff5e00;
+  border-radius: 8px;
+  margin-left: 5%;   /* 25px;     */
+}
+/*
+@media (max =200px;){
+  #ac ,#on ,#delet{
+  border-radius: 8px;
+  width: 290px;
+  height: 290px;
+  }
+}  
+*/
+#ac {
+  margin-left: 30%;
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: 3px;  
+  background-color: #fef7c8;
+  border-radius: 8px;
+}
+.btnpr {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: 3px;
+  color: #ff5e00;
+  background-color: #feebdf;
+  border-radius: 8px;
+}
+#divi , #minus ,#sum , #btn-m{
+  margin-left: 25px;
+}
+#result {
+  color: #002cff;
+}
+#div3 {
+  height: auto  /* 160px;  */
+  width: 80%;
+  margin: 1% 5% 5% 5%;
+  padding: 5px 5% 5% 5%;
+  background-color: #bbf1fe;
+  border-radius: 15px 15px 15px 15px;
+}
+#div3 h4 {
+  color: #ff0062;
+  display: inline;
+}
+#clean {
+  margin-left: 50%;
+  background-color: #fec791;
+  width: 90px;
+  height: 30px;
+}
+#history {
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+  background-color: #bbf1fe;
+}
