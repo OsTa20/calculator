@@ -72,8 +72,6 @@ aside marquee video {
   height: auto;
 }
 aside marquee audio {
-  width: 10%;
-  height: auto;
   visibility: hidden;
 }
 aside marquee {
