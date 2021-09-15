@@ -4,7 +4,7 @@ var menuopen =document.getElementById("menubtn");
 var menuclose =document.getElementById("closedialog");
 
 function fopendialog (){
-  dialog.setAttribute("open");
+  dialog.setAttribute("open","true");
 }
 function fclosedialog (){
   dialog.removeAttribute("open");
