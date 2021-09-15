@@ -1,3 +1,17 @@
+/* dialog */
+var dialog =document.getElementById("dialog");
+var menuopen =document.getElementById("menubtn");
+var menuclose =document.getElementById("closedialog");
+
+function fopendialog (){
+  dialog.setAttribute("open","true");
+}
+function fclosedialog (){
+  dialog.removeAttribute("open");
+}
+menuopen.addEventListener("click",fopendialog);
+menuclose.addEventListener("click",fclosedialog);
+/* done   */
 /*    السطر الأول       */
 var screen ='';
 var history1 ='';
