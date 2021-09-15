@@ -67,11 +67,11 @@ aside a {
   width: 100%;
   height: auto;
 }
-aside video {
+aside marquee video {
   width: 100%;
   height: auto;
 }
-aside audio {
+aside marquee audio {
   width: 10%;
   height: auto;
   visibility: hidden;
