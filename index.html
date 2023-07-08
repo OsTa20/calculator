@@ -1,0 +1,72 @@
+<html>
+  <head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculator</title>   
+  </head>   
+  <body>    
+    <div class="contener">
+      <img id="logoim" src="logo.png">
+      <div class="logo">
+        <h1 style="color:red;border: .5px solid white;">T</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <h1 style="color: white;border: .5px solid white;">K</h1>
+        <h1 style="color: red;border: .5px solid white;">W</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <button id="menu">|||</button>
+      </div>
+      <div id="menu_d">
+        <a href="history.html">history</a>
+        <a href="scencalc.html">scencalc</a>
+        <a href="metter.html">metter</a>
+      </div>
+      <div id="dark"></div>
+      <div class="screen_d">
+        <p id="screen_p">0</p>
+        <p id="screen_res"></p>
+      </div>
+      <div class="number nu-pr">
+        <!--   proces   -->
+        <button id="clearall">C</button>
+        <button id="pro_kos">( )</button>
+        <button id="pro_add" style="color:green">+</button>
+        <br>
+        <!--   proces   -->
+        <button id="btn_7">7</button>
+        <button id="btn_8">8</button>
+        <button id="btn_9">9</button>
+        <br>
+        <button id="btn_4">4</button>
+        <button id="btn_5">5</button>
+        <button id="btn_6">6</button>
+        <br>
+        <button id="btn_1">1</button>
+        <button id="btn_2">2</button>
+        <button id="btn_3">3</button>
+        <br>
+        <button id="pro_sing">±</button>
+        <button id="btn_0">0</button>
+        <button id="pro_poin">.</button>
+        <br>
+      </div>
+      <div class="proces nu-pr">
+        <button id="del_btn"></button>
+        <br>
+        <button id="pro_min">-</button>
+        <br>
+        <button id="pro_dar">×</button>
+        <br>
+        <button id="pro_ksm">÷</button>
+        <br>
+        <button id="result_btn">=</button>
+        <br>
+      </div>
+    </div>
+    <audio id="sound" controls>
+      <source src="click.mp3">
+    </audio>
+  </body> 
+  <script src="varibls.js"></script>
+  <script src="index.js"></script>
+</html> 

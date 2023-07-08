@@ -1,0 +1,191 @@
+<html>
+  <head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>metter</title>   
+  </head>    
+  <style>
+    .contener {
+      overflow: auto;
+      margin: 20px auto;
+      max-height: 650px;
+    }
+    .metter {
+      margin-top: 10px;
+    }
+    h3 {
+      margin: 10px;
+      color: white;
+    }
+    input {
+      height: 40px;
+      min-width: 90px;
+      max-width: 50%;
+      padding: 5px;
+      margin: 10px;
+      font-size: 20px;
+      border-radius: 0;
+    }
+    select {
+      height: 40px;
+      font-size: 15px;
+      padding: 5px;
+      border-radius: 0;
+    }
+  </style>
+  <body>    
+    <div class="contener">
+      <img id="logoim" src="logo.png">
+      <div class="logo">
+        <h1 style="color:red;border: .5px solid white;">T</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <h1 style="color: white;border: .5px solid white;">K</h1>
+        <h1 style="color: red;border: .5px solid white;">W</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <button id="menu">|||</button>
+      </div>
+      <div id="menu_d">
+        <a href="index.html">home</a>
+        <a href="history.html">history</a>
+        <a href="scencalc.html">scencalc</a>
+      </div>
+      <div id="dark"></div>
+      <div class="metter">
+        <h3>disert</h3>
+        <input id="di_in1" type="number">
+        <select id="di_se1">
+          <option value="km">km</option>
+          <option value="m">m</option>
+          <option value="dm">dm</option>
+          <option value="cm">cm</option>
+          <option value="mm">mm</option>
+        </select>
+        <input id="di_in2" type="number">
+        <select id="di_se2">
+          <option value="km">km</option>
+          <option value="m">m</option>
+          <option value="dm">dm</option>
+          <option value="cm">cm</option>
+          <option value="mm">mm</option>
+        </select>
+      </div>
+      <div class="metter">
+        <h3>height</h3>
+        <input id="he_in1" type="number">
+        <select id="he_se1">
+          <option>tn</option>
+          <option>kg</option>
+          <option>g</option>
+        </select>
+        <input id="he_in2" type="number">
+        <select id="he_se2">
+          <option>tn</option>
+          <option>kg</option>
+          <option>g</option>
+        </select>
+      </div>
+      <div class="metter">
+        <h3>time</h3>
+        <input id="ti_in1" type="number">
+        <select id="ti_se1">
+          <option>da</option>
+          <option>ho</option>
+          <option>mi</option>
+          <option>se</option>
+        </select>
+        <input id="ti_in2" type="number">
+        <select id="ti_se2">
+          <option>da</option>
+          <option>ho</option>
+          <option>mi</option>
+          <option>se</option>
+        </select>
+      </div>
+    </div>
+  </body> 
+  <script>
+    let menu = document.getElementById('menu');
+    let menu_d = document.getElementById('menu_d');
+    var menu_var = 0;
+    menu.onclick = function(){
+      if(menu_var == 0){
+        menu.textContent = '><';
+        menu_d.style = "visibility: visible;width: 150px";
+        menu_var = 1;
+        dark.style.display = 'block';
+      }
+      else{
+        menu.textContent = '|||';
+        menu_d.style = "visibility: hidden;width: 0";
+        menu_var = 0;
+        dark.style.display = 'none';
+      }
+    }
+    let di_se1 = document.getElementById('di_se1');
+    let di_se2 = document.getElementById('di_se2');
+    let he_se1 = document.getElementById('he_se1');
+    let he_se2 = document.getElementById('he_se2');
+    let ti_se1 = document.getElementById('ti_se1');
+    let ti_se2 = document.getElementById('ti_se2');
+    let di_in1 = document.getElementById('di_in1');
+    let di_in2 = document.getElementById('di_in2');
+    let he_in1 = document.getElementById('he_in1');
+    let he_in2 = document.getElementById('he_in2');
+    let ti_in1 = document.getElementById('ti_in1');
+    let ti_in2 = document.getElementById('ti_in2');
+    
+    let data = [
+      ['km', 1,'m', 1000,'dm', 10000,'cm', 100000,'mm', 1000000],
+      ['tn', 1,'kg', 1000,'g', 1000000],
+      ['da', 1,'ho', 24,'mi', 1440,'se', 86400]
+      ];
+    let se1;
+    let se2;
+    let inva;
+    let v1;
+    let v2;
+    let res;
+    di_se1.onchange = function(){findex(di_se1,di_se2,di_in1,di_in2)}
+    di_se2.onchange = function(){findex(di_se2,di_se1,di_in2,di_in1)}
+    
+    he_se1.onchange = function(){findex(he_se1,he_se2,he_in1,he_in2)}
+    he_se2.onchange = function(){findex(he_se2,he_se1,he_in2,he_in1)}
+    
+    ti_se1.onchange = function(){findex(ti_se1,ti_se2,ti_in1,ti_in2)}
+    ti_se2.onchange = function(){findex(ti_se2,ti_se1,ti_in2,ti_in1)}
+    
+    di_in1.onchange = function(){di_in2.value = 0;findex(di_se2,di_se1,di_in2,di_in1)}
+    di_in2.onchange = function(){di_in1.value =0;findex(di_se1,di_se2,di_in1,di_in2)}
+    
+    he_in1.onchange = function(){he_in2.value = 0;findex(he_se2,he_se1,he_in2,he_in1)}
+    he_in2.onchange = function(){he_in1.value =0;findex(he_se1,he_se2,he_in1,he_in2)}
+    
+    ti_in1.onchange = function(){ti_in2.value = 0;findex(ti_se2,ti_se1,ti_in2,ti_in1)}
+    ti_in2.onchange = function(){ti_in1.value =0;findex(ti_se1,ti_se2,ti_in1,ti_in2)}
+    
+    function findex(di1,di2,dii1,dii2){  
+      if(di1.value != di2.value){
+        if(dii2.value == ''){
+          dii2.value = 0;
+        }
+        inva = dii2.value;
+        se1 = di1.value;
+        se2 = di2.value;
+        for(var i in data){
+          for (var j=0; j<data[i].length; j++){
+            if(se1 == data[i][j]){
+              v1 = data[i][j + 1];
+              v2 = data[i][data[i].indexOf(se2)+1];
+              res = (inva * v1) / v2;
+              dii1.value = res;
+            }
+          }
+        }
+      }
+      else {
+        dii1.value = dii2.value;
+      }
+    }
+  </script> 
+</html> 

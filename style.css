@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+#sound {
+  display: none;
+}
+.contener {
+  width: calc(100% - 20px);
+  margin: 50px auto;
+  padding: 20px 10px;
+  background-color: #4c92c1;
+  max-height: 600px;
+}
+div {
+  border: 2px solid black;
+  padding: 5px;
+}
+.logo, .screen_d, .number, .proces {
+  border: none;
+}
+#logoim {
+  width: 45px;
+  height: 45px;
+  border-radius: 0;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+button {
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+#del_btn {
+  background-image: url('delet.svg');
+  background-size: 80% 80%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.proces button {
+  color: green;
+}
+#clearall {
+  color: white;
+  background-color: red;
+}
+#result_btn {
+  color: white;
+  background-color: green;
+}
+.logo h1 {
+  display: inline-block;
+}
+.logo #menu {
+  position: absolute;
+  right: 5px;
+  top: .5px;
+  transform: rotate(90deg);
+  color: white;
+  border: 2px solid white;
+  background: none;
+  width: 50px;
+  height: 50px;
+}
+.screen_d {
+  padding: 10px;
+}
+#screen_p, #screen_res {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+  background-color: #408205;
+  border: 2px solid black;
+  text-align: left;
+  border-radius: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+#screen_p {
+  border-bottom: none;
+  max-height: 90px;
+  overflow: auto;
+}
+#screen_res {
+  color: red;
+  border-top: none;
+  overflow: auto;
+}
+#menu_d {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 0; /* 150 */
+  visibility: hidden;
+  padding: 10px;
+  background-color: white;
+  z-index: 3;
+  overflow: hidden;
+  transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  border-radius: 0;
+}
+#dark {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 0;
+  background-color: gray;
+  z-index: 2;
+  border-radius: 0 0 20px 20px;
+  display: none;
+}
+#menu_d a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 0;
+}
+.nu-pr {
+  display: inline-block;
+  margin: 5px;
+}

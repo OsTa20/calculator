@@ -1,0 +1,105 @@
+<html>
+  <head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calc-history</title>   
+  </head>    
+  <style>
+    .contener {
+      min-height: 400px;
+      max-height: 600px;
+      overflow: auto;
+    }
+    .history {
+      margin-top: 20px;
+      padding: 20px;
+      font-size: 20px;
+    }
+    .history h3 {
+      color: white;
+    }
+    .history p {
+      text-align: left;
+    }
+    .history .date {
+      color: blue;
+    }
+    #clesrh_d {
+      margin-top: 10px;
+    }
+    #clesrh_b {
+      width: auto;
+      padding: 10px;
+    }
+  </style>
+  <body>    
+    <div class="contener">
+      <img id="logoim" src="logo.png">
+      <div class="logo">
+        <h1 style="color:red;border: .5px solid white;">T</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <h1 style="color: white;border: .5px solid white;">K</h1>
+        <h1 style="color: red;border: .5px solid white;">W</h1>
+        <h1 style="color: blue;border: .5px solid white;">A</h1>
+        <button id="menu">|||</button>
+      </div>
+      <div id="menu_d">
+        <a href="index.html">home</a>
+        <a href="scencalc.html">scencalc</a>
+        <a href="metter.html">metter</a>
+      </div>
+      <div id="dark"></div>
+      <div class="history">
+        <h3>history</h3>
+        <hr><br>
+      </div>
+      <div id="clesrh_d">
+        <button id="clesrh_b">clear history</button>
+      </div>
+    </div>
+  </body> 
+  <script>
+    let menu = document.getElementById('menu');
+    let menu_d = document.getElementById('menu_d');
+    var menu_var = 0;
+    menu.onclick = function(){
+      if(menu_var == 0){
+        menu.textContent = '><';
+        menu_d.style = "visibility: visible;width: 150px";
+        menu_var = 1;
+        dark.style.display = 'block';
+      }
+      else{
+        menu.textContent = '|||';
+        menu_d.style = "visibility: hidden;width: 0";
+        menu_var = 0;
+        dark.style.display = 'none';
+      }
+    }
+    let history = document.getElementsByClassName('history');
+    let history_arr = [];
+    let historyday_arr = [];
+    if(localStorage.lhistory != undefined){
+      history_arr = localStorage.lhistory.split(',');
+      historyday_arr = localStorage.lhistoryday.split(',');
+      history_arr.reverse();
+      historyday_arr.reverse();
+      for(var i=0; i<history_arr.length; i++){
+        var p1 = document.createElement('p');
+        p1.textContent = historyday_arr[i];
+        p1.classList.add('date');
+        var p2 = document.createElement('p');
+        p2.textContent = i+1 + ') ' + history_arr[i];
+        history[0].appendChild(p1);
+        history[0].appendChild(p2);
+      }
+    }
+    let clesrh_b = document.getElementById('clesrh_b');
+    clesrh_b.onclick = function(){
+      localStorage.removeItem('lhistory'); 
+      localStorage.removeItem('lhistoryday');
+      history[0].innerHTML = "<h3>history</h3><hr><br>";
+    }
+  </script> 
+</html> 
